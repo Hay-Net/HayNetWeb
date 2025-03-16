@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HayNet - Your Stable Online Community!</title>
+    <style>
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background: linear-gradient(to bottom, #8B4513, #D2B48C); /* Earthy tones */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 3px double #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        h1 {
+            color: #FFD700; /* Golden yellow */
+            text-shadow: 3px 3px 5px #000000;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px dashed #D2B48C;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .feature h2 {
+            color: #90EE90; /* Light green */
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .emoticon {
+            font-size: 1.5em;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #D2B48C;
+            border-top: 1px dotted #FFFFFF;
+            padding-top: 10px;
+        }
+
+        .horse-image {
+            max-width: 200px;
+            margin-bottom: 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #loginLink {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #loginButton {
+            padding: 15px 30px;
+            background-color: #FFD700;
+            color: #000000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        #loginButton:hover {
+            background-color: #D2B48C;
+        }
+
+        #userButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1em;
+            color: #000000;
+            background-color: #FFD700;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        #userButton:hover {
+            background-color: #D2B48C;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="userButton" style="display: none;"></button>
+        <h1>HayNet</h1>
+        <img class="horse-image" src="horse.png" alt="HayNet Mascot">
+        <p>Your Stable Online Community!</p>
+
+        <div class="feature">
+            <h2>Stable Mail! <a href="haymail.html">Check Your HayMail!</a></h2>
+            <p>Get your @meadow.haynet or @pasture.haynet address! "You've Got Hay!" alerts and horse-themed emoticons like <span class="emoticon">:neigh:</span> and <span class="emoticon">:trot:</span>.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Paddock Chat! <a href="paddockchat.html">Join the Paddock!</a></h2>
+            <p>Chat rooms like "Paddock Pals" and "Riding Ring Rumble." Instant messaging with Buddy Lists. Giddy up!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Mane News! <a href="manenews.html">Get the Latest!</a></h2>
+            <p>Daily updates on horse health, riding tips, and events. "Horse of the Week" and "Ask the Vet." Fresh news!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Trail Web! <a href="trailweb.html">Explore the Trails!</a></h2>
+            <p>Curated web directory with links to horse-related resources. Horse search engine. Trot the Web!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Hoof Games! <a href="hoofgames.html">Play Now!</a></h2>
+            <p>Play "Stable Scramble," "Trail Ride Challenge," and more. High score leaderboards. Game on!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Herd Connect! <a href="herdconnect.html">Join the Herd!</a></h2>
+            <p>Forums, classifieds, and stable reviews. Share photos and stories. Connect with your herd!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Foal Fun! <a href="foalfun.html">For the Foals!</a></h2>
+            <p>Safe area for young horse enthusiasts. Interactive stories, games and coloring pages. Fun for the little ones!</p>
+        </div>
+
+        <div class="feature">
+            <h2>Weather Watch! <a href="weatherwatch.html">Check the Weather!</a></h2>
+            <p>Detailed weather reports, riding conditions, and alerts. Stay safe!</p>
+        </div>
+
+        <div id="loginLink">
+            <a id="loginButton" href="login.html">Login / Signup</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 HayNet. Trot into the Web! Giddy Up!</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('username');
+            if (username) {
+                const userButton = document.getElementById('userButton');
+                userButton.textContent = `Welcome, ${username}!`;
+                userButton.style.display = 'block'; // Show user button
+                document.getElementById('loginLink').style.display = 'none'; // Hide login button
+            }
+            //Place holder for horse image.
+            let horseImage = document.querySelector(".horse-image");
+            if(horseImage){
+                horseImage.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAa9JREFUeF7t3d1xwjAUhWFLiU2l8yX/o0i0yQ2h4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQz2g4w7iQ
